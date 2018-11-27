@@ -21,7 +21,7 @@ type User struct {
 
 // PrepareUserData implement PersonalData interface
 func (u *User) PrepareUserData() {
-	u.Username = u.Username
+	u.Username = u.ID
 }
 
 // GoogleUser is a retrieved and authentiacted user from Google.
