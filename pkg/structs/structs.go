@@ -15,13 +15,14 @@ type User struct {
 	Email      string `json:"email",mapstructure:"email"`
 	CreatedOn  int64  `json:"createdon"`
 	LastUpdate int64  `json:"lastupdate"`
-	ID         int    `json:"_id",mapstructure:"id"`
+	ID         int    `json:"id",mapstructure:"id"`
+	ObjectID   string `json:"_id"`
 	// jwt.StandardClaims
 }
 
 // PrepareUserData implement PersonalData interface
 func (u *User) PrepareUserData() {
-	u.Username = u.ID
+	u.Username = u.ObjectID
 }
 
 // GoogleUser is a retrieved and authentiacted user from Google.
